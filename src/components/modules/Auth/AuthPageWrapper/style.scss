@@ -1,0 +1,55 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    &__form {
+        width: 400px;
+        background-color: rgba(211, 211, 211, 0.2);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        text-align: center;
+
+        &--logo {
+            width: 180px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &--inputfield {
+            text-align: right;
+            margin-block-end: 1rem;
+        }
+
+        &--input {
+            width: 100%;
+            background-color: #e2e7ef;
+            color: #51868a;
+            text-align: center;
+        }
+
+        &--button {
+            width: 60%;
+            font-weight: bold;
+            margin-inline: auto;
+            margin-block-start: 2.5rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 0.5rem;
+
+            &:disabled {
+                cursor: auto;
+            }
+        }
+    }
+
+    .credit {
+        margin-block: 2rem;
+        font-size: 0.8rem;
+        color: var(--text-clr-14);
+    }
+}

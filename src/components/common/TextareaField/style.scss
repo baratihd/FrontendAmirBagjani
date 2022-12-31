@@ -1,0 +1,60 @@
+.textarea-form-control {
+    --label-color: #6C748B;
+    --input-color: #969CAE;
+    --border-color: #E5E5E5;
+    --focus-color: gray;
+
+    &--disable {
+        --input-color: lightgray;
+        --border-color: lightgray;
+    }
+
+    &--error {
+        --input-color: crimson;
+        --border-color: crimson;
+        --label-color: crimson;
+    }
+
+    &__input {
+        min-width: 280px;
+        height: 93px;
+        resize: none;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        text-align: right;
+        padding: 0.875rem 1rem;
+        border: 1px solid var(--border-color);
+        background-color: transparent;
+        color: var(--input-color);
+
+        &:focus {
+            outline: 1px solid var(--focus-color);
+        }
+
+        &::placeholder {
+            color: var(--input-color);
+        }
+    }
+
+    &__label {
+        display: block;
+        color: var(--label-color);
+        margin-block-end: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+
+        &--required {
+            &::after {
+                content: "*";
+            }
+        }
+    }
+
+    &__error {
+        display: block;
+        color: crimson;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-block-start: 0.5rem;
+    }
+}

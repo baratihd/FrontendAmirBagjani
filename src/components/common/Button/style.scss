@@ -1,0 +1,43 @@
+@import "styles/utils";
+
+.customButton {
+    --bg-color: transparent;
+    --text-color: var(--text-clr);
+    --btn-gap: 0.7rem;
+
+    @include custom-size(1100px) {
+        --btn-gap: 0.5rem;
+    }
+
+    &--outlined {
+        --text-color: var(--text-clr);
+        --bg-color: transparent;
+    }
+
+    &--contained {
+        --text-color: #FFF;
+        --bg-color: var(--orange-800);
+    }
+
+    &--disable {
+        --text-color: var(--text-disabled);
+        --bg-color: var(--bg-disabled);
+    }
+
+    border: none;
+    outline: none;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    gap: var(--btn-gap);
+    font-size: 14px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+
+    & .startIcon,
+    & .endIcon {
+        display: flex;
+    }
+}

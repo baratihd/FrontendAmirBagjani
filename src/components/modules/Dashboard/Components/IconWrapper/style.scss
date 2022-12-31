@@ -1,0 +1,22 @@
+.IconWrapper-container {
+    --icon-bg-color: transparent;
+
+    font-size: 14px;
+    color: var(--text-clr-14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--icon-bg-color);
+    cursor: pointer;
+
+    &__icon {
+        width: 58px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.25rem;
+        box-shadow: 0 8px 16px 0 rgba(186, 190, 196, 0.24);
+    }
+}

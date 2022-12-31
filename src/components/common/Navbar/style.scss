@@ -1,0 +1,129 @@
+@import "styles/utils";
+
+.header {
+    --list-fz: 1rem;
+    --list-gap: 3.75rem;
+    --list-item-gap: 0.5rem;
+    --header-padding: 4.7rem;
+    --user-gap: 4rem;
+
+    @include custom-size(1230px) {
+        --list-fz: 0.875rem;
+        --list-gap: 2.75rem;
+        --header-padding: 4rem;
+        --user-gap: 3.5rem;
+    }
+
+    @include custom-size(1100px) {
+        --list-item-gap: 0.3rem;
+        --list-gap: 2.25rem;
+        --header-padding: 3rem;
+        --user-gap: 2rem;
+    }
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-inline: var(--header-padding);
+    height: 95px;
+
+
+    &__menu-icon {
+        width: 24px;
+        height: 24px;
+        fill: var(--dark-blue-200);
+        cursor: pointer;
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__logo {
+        width: 95px;
+        height: 95px;
+        object-fit: cover;
+        margin-inline-end: var(--header-padding);
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__navbar {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: var(--list-gap);
+
+        @include tablet {
+            display: none;
+            position: absolute;
+            height: fit-content;
+            right: var(--header-padding);
+            top: var(--header-padding);
+            align-items: flex-start;
+            background-color: var(--bg-paper-clr);
+            padding: 0.7rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 9px 4px rgba(211, 214, 215, 0.765);
+
+            &.show {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+
+        &--list {
+            height: 100%;
+            width: max-content;
+
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                gap: var(--list-item-gap);
+                position: relative;
+                color: var(--dark-blue-200);
+                font-weight: 400;
+                font-size: var(--list-fz);
+
+                &.active {
+                    font-weight: 500;
+                    color: var(--orange-800);
+
+                    svg>* {
+                        fill: var(--orange-800);
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        border-radius: 2px;
+                        width: 48px;
+                        height: 5px;
+                        top: 0;
+                        right: 2rem;
+                        background-color: var(--orange-500);
+
+                        @include tablet {
+                            content: "";
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    &__user {
+        display: flex;
+        gap: var(--user-gap);
+        align-items: center;
+        margin-inline-start: auto;
+    }
+}
