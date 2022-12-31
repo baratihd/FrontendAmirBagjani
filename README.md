@@ -40,6 +40,12 @@ Install dependencies
   yarn install
 ```
 
+Run Project
+
+```bash
+  yarn start
+```
+
 
 ## Author
 
