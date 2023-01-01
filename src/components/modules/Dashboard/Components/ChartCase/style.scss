@@ -1,10 +1,21 @@
 @import "styles/utils";
 
-.chart-case{
+.chart-case {
+
+    --title-fz: 1.125rem;
+    --detail-fz: 0.813rem;
+    --header-inline-padding: 2rem;
+
+    @include mobile {
+        --title-fz: 0.9375rem;
+        --detail-fz: 0.75rem;
+        --header-inline-padding: 1.3rem;
+    }
+
     width: 760px;
     border-radius: 1.25rem;
     background-color: var(--bg-paper-clr);
-    padding: 1.25rem 2rem;
+    padding: 1.25rem var(--header-inline-padding);
     box-shadow: 0 4px 0 0 rgba(239, 238, 238, 0.25);
 
     @include custom-size(1315px) {
@@ -20,13 +31,13 @@
 
         &--title {
             font-weight: 500;
-            font-size: 1.125rem;
+            font-size: var(--title-fz);
             color: var(--title-clr);
         }
 
         &--detail {
             color: var(--text-clr);
-            font-size: 0.813rem;
+            font-size: var(--detail-fz);
             font-weight: 500;
 
             .top {

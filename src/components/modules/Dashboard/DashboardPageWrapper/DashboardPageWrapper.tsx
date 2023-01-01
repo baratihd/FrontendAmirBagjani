@@ -11,7 +11,7 @@ export const DashboardPageWrapper = () => {
   return (
     <section className="dashboard-section">
 
-      {/* <div className="dashboard-section__info">
+      <div className="dashboard-section__info">
         {informationItems.map(item => (
           <IconWrapper
           key={item.id}
@@ -20,7 +20,7 @@ export const DashboardPageWrapper = () => {
             color={item.color}
           />
         ))}
-      </div> */}
+      </div>
 
       <div className="dashboard-section__cases">
         <CountCase />

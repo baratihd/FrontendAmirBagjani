@@ -1,7 +1,15 @@
 @import "styles/utils";
 
 .dashboard-section {
-    padding: 5.938rem 4.688rem;
+
+    --main-inline-padding: 4.688rem;
+    --main-block-padding: 5.938rem;
+    @include mobile {
+        --main-inline-padding: 3rem;
+    }
+
+    padding-block: var(--main-block-padding);
+    padding-inline: var(--main-inline-padding);
 
     &__info {
         background-color: var(--bg-paper-clr);
