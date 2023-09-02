@@ -1,14 +1,14 @@
 import { User } from "models";
 import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from "axios";
 
-const client = axios.create({ baseURL: process.env.REACT_APP_BASE_URL });
+const client = axios.create({ baseURL: "http://188.121.120.70:8000" });
 
 export const request = <Data, Error>({ ...options }: AxiosRequestConfig) => {
 
   const token = JSON.parse(localStorage.getItem("iranian-token") || "")
   if (!!token) {
     const access = (token as User).access;
-    client.defaults.headers.common.Authorization = `jwt ${access}`;
+    client.defaults.headers.common.Authorization = `Bearer ${access}`;
   }
 
   const onSuccess = (response: AxiosResponse<Data>) => Promise.resolve(response.data);
