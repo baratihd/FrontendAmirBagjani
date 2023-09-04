@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --network-timeout 1000000
 
+
 FROM node:18-alpine3.17 AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
