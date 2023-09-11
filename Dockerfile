@@ -1,4 +1,4 @@
-FROM node:18-alpine3.17 AS deps
+FROM docker.numenoreans.com/node:18-alpine3.17 AS deps
 RUN apk update && \
     apk add --no-cache libc6-compat nasm autoconf automake bash libltdl libtool gcc make g++ zlib-dev
 WORKDIR /app
@@ -13,7 +13,7 @@ COPY . .
 RUN yarn build
 
 
-FROM node:18-alpine3.17 AS runner
+FROM docker.numenoreans.com/node:18-alpine3.17 AS runner
 WORKDIR /app
 ENV NODE_ENV production
 RUN addgroup --system --gid 1001 nodejs
