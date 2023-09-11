@@ -1,8 +1,8 @@
 import { User } from "models";
 import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from "axios";
 
-// const client = axios.create({ baseURL: "http://188.121.120.70:8000" });
-const client = axios.create({ baseURL: "http://localhost:8000" });
+const client = axios.create({ baseURL: "http://5.253.27.176" });
+// const client = axios.create({ baseURL: "http://localhost:8000" });
 
 export const request = <Data, Error>({ ...options }: AxiosRequestConfig) => {
 
