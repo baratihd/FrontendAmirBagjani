@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import React, { ReactNode } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -23,7 +23,7 @@ const queryClient = new QueryClient({
 });
 
 
-const Providers = ({ children }: { children: ReactNode }) => {
+const Providers = ({ children }) => {
   return (
     <React.StrictMode>
       <BrowserRouter>
@@ -40,6 +40,6 @@ const Providers = ({ children }: { children: ReactNode }) => {
 
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById("root")
 );
 root.render(<Providers><App /></Providers>);

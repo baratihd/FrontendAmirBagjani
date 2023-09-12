@@ -24,4 +24,4 @@ COPY --from=builder /app/node_modules ./node_modules
 USER nodejs
 EXPOSE 3000
 ENV PORT 3000
-CMD ["yarn", "start"]
+CMD ["yarn", "run", "start"]
