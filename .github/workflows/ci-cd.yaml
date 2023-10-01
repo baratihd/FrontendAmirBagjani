@@ -21,7 +21,7 @@ jobs:
 
       - name: Login to Docker Registery
         run: |
-          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login docker.insighttech.ir -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          echo "${{ secrets.DOCKER_REPOSITPRY_PASSWORD }}" | docker login docker.sanaap.co -u "${{ secrets.DOCKER_REPOSITPRY_USERNAME }}" --password-stdin
 
       - name: Build and push
         run: |
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           retries: 3
           script: |
-            echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login docker.insighttech.ir -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            echo "${{ secrets.DOCKER_REPOSITPRY_PASSWORD }}" | docker login docker.sanaap.co -u "${{ secrets.DOCKER_REPOSITPRY_USERNAME }}" --password-stdin
 
       - name: SSH server update image
         uses: appleboy/ssh-action@v1.0.0
